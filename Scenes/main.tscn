@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://nhgoro2d3el3"]
+[gd_scene load_steps=43 format=3 uid="uid://nhgoro2d3el3"]
 
 [ext_resource type="PackedScene" uid="uid://bo4nsnj3j80jn" path="res://Scenes/board.tscn" id="1_807bc"]
 [ext_resource type="PackedScene" uid="uid://cg64bpgarmdh5" path="res://Scenes/multiplayer.tscn" id="1_caj84"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dsikuf67g41hm" path="res://Assets/Chess/black_rook.png" id="7_s0i6m"]
 [ext_resource type="Texture2D" uid="uid://c44tfqmqamyug" path="res://Assets/Chess/black_queen.png" id="8_o3mvs"]
 [ext_resource type="PackedScene" uid="uid://c6nbptouassun" path="res://Scenes/menu.tscn" id="10_appac"]
+[ext_resource type="PackedScene" uid="uid://ye4mlrqh5qa7" path="res://Scenes/move_window.tscn" id="12_5nswu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6som7"]
 
@@ -254,3 +255,5 @@ texture = null
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_vbfft")
+
+[node name="Move_window" parent="." instance=ExtResource("12_5nswu")]
