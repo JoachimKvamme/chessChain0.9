@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6nbptouassun"]
+
+[ext_resource type="Texture2D" path="res://Assets/Menu/menu background.png" id="1_qf8bk"]
+[ext_resource type="Script" path="res://p2p_server.cs" id="2_hpnq3"]
+[ext_resource type="Script" path="res://Scenes/HostButton.cs" id="3_osiwp"]
+
+[node name="buttons" type="Sprite2D"]
+position = Vector2(-150, -150)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_qf8bk")
+script = ExtResource("2_hpnq3")
+
+[node name="Host" type="Button" parent="."]
+offset_left = -213.0
+offset_top = -167.0
+offset_right = 213.0
+offset_bottom = -57.0
+theme_override_font_sizes/font_size = 40
+text = "Host"
+script = ExtResource("3_osiwp")
+
+[node name="Join" type="Button" parent="."]
+offset_left = -213.0
+offset_top = 43.0001
+offset_right = 213.0
+offset_bottom = 153.0
+theme_override_font_sizes/font_size = 40
+text = "Join"
+
+[connection signal="pressed" from="Host" to="." method="OnHostPressed"]
