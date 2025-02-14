@@ -11,6 +11,9 @@ func _ready() -> void:
 	# var all_moves = <name of variable>.<name of source node>
 	rtl.text += GameManager.game_string
 
+func _process(delta: float) -> void:
+	$".".text = GameManager.game_string
+
 func _display_moves(moves: Array):
 	var moves_as_string = ""
 	for moveset in moves:
