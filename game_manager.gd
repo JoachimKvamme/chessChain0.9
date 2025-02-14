@@ -3,6 +3,7 @@ extends Node
 var players = {}
 
 var game : Array = [[]]
+var game_string : String = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

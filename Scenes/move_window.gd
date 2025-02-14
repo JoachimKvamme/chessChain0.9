@@ -9,7 +9,7 @@ func _ready() -> void:
 	var rtl = $"."
 
 	# var all_moves = <name of variable>.<name of source node>
-	rtl.text += _display_moves(all_moves)
+	rtl.text += GameManager.game_string
 
 func _display_moves(moves: Array):
 	var moves_as_string = ""

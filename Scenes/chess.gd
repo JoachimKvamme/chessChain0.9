@@ -179,8 +179,8 @@ func _input(event):
 				elif state:
 					set_moves(var2, var1)
 					if scan_move(var2, var1) != null && move_was_made:
-						display_game()
 						append_move(var2, var1)
+						print(GameManager.game)
 						
 					
 		if event is InputEventKey and event.is_pressed():
@@ -194,6 +194,7 @@ func _input(event):
 
 func _process(delta: float) -> void:
 	display_board()
+	record_game()
 
 
 
@@ -744,19 +745,19 @@ func append_selected(played_move):
 	
 	
 
-func display_game():
+func record_game():
 	var game_string = ""
 	var i = 1
 	
-	while i < game_to.size():
+	while i < GameManager.game.size():
 		game_string = game_string + "\n" + str(i) + ". "
-		for x in game_to[i]:
-			if game_to.size() % 2 != 0:
+		for x in GameManager.game[i]:
+			if GameManager.game.size() % 2 != 0:
 				game_string = game_string + x
 			else:
 				game_string = game_string + " " + x
 		i = i + 1
-	print(game_string)
+	GameManager.game_string = game_string
 		
 		
 		
