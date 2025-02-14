@@ -180,6 +180,7 @@ func _input(event):
 					set_moves(var2, var1)
 					if scan_move(var2, var1) != null && move_was_made:
 						display_game()
+						append_move(var2, var1)
 						
 					
 		if event is InputEventKey and event.is_pressed():
@@ -729,11 +730,11 @@ func threefold_repetition(var1 : Array):
 	
 func append_move(var2, var1):
 	if !white:
-		game_to.append([])
+		GameManager.game.append([])
 		game_index += 1
 	var played_move
 	played_move = scan_move(var2, var1)
-	game_to[game_index].append(played_move)
+	GameManager.game[game_index].append(played_move)
 	
 func append_selected(played_move):
 	if !white:
