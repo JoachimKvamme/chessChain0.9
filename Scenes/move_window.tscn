@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://ye4mlrqh5qa7"]
+[gd_scene load_steps=4 format=3 uid="uid://ye4mlrqh5qa7"]
 
 [ext_resource type="Script" path="res://Scenes/move_window.gd" id="1_vc0wi"]
 
@@ -8,6 +8,14 @@ border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_o24qa"]
+properties/0/path = NodePath("MarginContainer/MarginContainer/HBoxContainer/DisplayMoves:text")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("MarginContainer/MarginContainer/HBoxContainer/DisplayMoves:game_string")
+properties/1/spawn = true
+properties/1/replication_mode = 1
 
 [node name="Move_window" type="CanvasLayer"]
 follow_viewport_enabled = true
@@ -38,3 +46,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Moves"
 script = ExtResource("1_vc0wi")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_o24qa")

@@ -249,7 +249,7 @@ func reset():
 	[0, 0, 0, 0, 0, 0, 0, 0],
 	[-1, -1, -1, -1, -1, -1, -1, -1],
 	[-4, -2, -3, -5, -6, -3, -2, -4]]
-	
+	GameManager.game = [[]]
 	display_board()
 			
 func is_mouse_out():
@@ -285,6 +285,7 @@ func display_board():
 				
 	if white: turn.texture = TURN_WHITE
 	else: turn.texture = TURN_BLACK
+	
 
 func show_options():
 	moves = get_moves(selected_piece)
