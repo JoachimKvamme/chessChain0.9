@@ -54,6 +54,7 @@ const TILE_MARKING_WHITE_PERSPECTIVE = preload("res://Assets/ChessOriginal/tile_
 @onready var black_pieces: Control = $"../CanvasLayer/black_pieces"
 
 
+
 # variables
 # -6 = black king
 # -5 = black queen
@@ -70,7 +71,7 @@ const TILE_MARKING_WHITE_PERSPECTIVE = preload("res://Assets/ChessOriginal/tile_
 #  1 white pawn
 
 @export var board : Array
-var white : bool = true
+@export var white : bool = true
 @export var state : bool = false
 var moves = []
 var selected_piece : Vector2
@@ -160,9 +161,8 @@ func _ready() -> void:
 		button.pressed.connect(self._on_button_pressed.bind(button))
 
 
-
+@rpc("any_peer", "call_local")
 func _input(event):
-	if is_multiplayer_authority():
 		if event is InputEventMouseButton && event.is_pressed() && promotion_square == null:
 			if event.button_index == MOUSE_BUTTON_LEFT:
 				if is_mouse_out(): return
@@ -305,6 +305,7 @@ func delete_dots():
 	for child in dots.get_children():
 		child.queue_free()
 
+@rpc("any_peer", "call_local")
 func set_moves(var2, var1):
 	
 	var just_now = false

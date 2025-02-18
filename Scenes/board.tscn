@@ -7,10 +7,10 @@
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_n1y4o"]
 properties/0/path = NodePath(".:board")
 properties/0/spawn = true
-properties/0/replication_mode = 1
-properties/1/path = NodePath(".:state")
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:white")
 properties/1/spawn = true
-properties/1/replication_mode = 1
+properties/1/replication_mode = 2
 
 [node name="board" type="Sprite2D"]
 position = Vector2(405, -424)
